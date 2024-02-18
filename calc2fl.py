@@ -172,6 +172,16 @@ def main(page: ft.Page):
                 page.update()			#  grafikus felület frissítése
 
 
+        def fo_f_clicked(e):			#  fo-tab 'f' változását lekezelő függvény
+                pass
+
+        def fo_L_clicked(e):			#  fo-tab 'L' változását lekezelő függvény
+                pass
+
+        def fo_C_clicked(e):			#  fo-tab 'C' változását lekezelő függvény
+                pass
+
+
         txt_cim= ft.Text(
                 value=" Elektrotechnikai számítások ", 
                 color=ft.colors.WHITE, 
@@ -183,9 +193,9 @@ def main(page: ft.Page):
         tb_xl_f = ft.TextButton("frekvencia, f (Hz)", on_click=xl_f_clicked)
         tb_xl_L = ft.TextButton("Induktivitás, L (mH)", on_click=xl_L_clicked)
         tb_xl_XL = ft.TextButton("XL = 2*pi*f*L (ohm)", on_click=xl_XL_clicked)
-        tf_xl_f = ft.TextField(value=" ", width = 100)
-        tf_xl_L = ft.TextField(value=" ", width = 100)
-        tf_xl_XL = ft.TextField(value=" ", width = 100)
+        tf_xl_f = ft.TextField(value=" ", width = 200)
+        tf_xl_L = ft.TextField(value=" ", width = 200)
+        tf_xl_XL = ft.TextField(value=" ", width = 200)
 
         data_xlf = ft.Row(controls=[tb_xl_f,tf_xl_f])
         data_xlL = ft.Row(controls=[tb_xl_L,tf_xl_L])
@@ -194,13 +204,25 @@ def main(page: ft.Page):
         tb_xc_f = ft.TextButton("frekvencia, f (Hz)", on_click=xc_f_clicked)
         tb_xc_C = ft.TextButton("Kapacitás, C (nF)", on_click=xc_C_clicked)
         tb_xc_XC = ft.TextButton("XC = 1/(2*pi*f*C)  (ohm)", on_click=xc_XC_clicked)
-        tf_xc_f = ft.TextField(value=" ", width = 100)
-        tf_xc_C = ft.TextField(value=" ", width = 100)
-        tf_xc_XC = ft.TextField(value=" ", width = 100)
+        tf_xc_f = ft.TextField(value=" ", width = 200)
+        tf_xc_C = ft.TextField(value=" ", width = 200)
+        tf_xc_XC = ft.TextField(value=" ", width = 200)
 
         data_xcf = ft.Row(controls=[tb_xc_f,tf_xc_f])
         data_xcC = ft.Row(controls=[tb_xc_C,tf_xc_C])
         data_xcXC = ft.Row(controls=[tb_xc_XC,tf_xc_XC])
+
+        tb_fo_f = ft.TextButton("rezonancia frekvencia, fo (Hz)", on_click=fo_f_clicked)
+        tb_fo_L = ft.TextButton("Induktivitás, L (mH)", on_click=fo_L_clicked)
+        tb_fo_C = ft.TextButton("Kapacitás (nF)", on_click=fo_C_clicked)
+        tf_fo_f = ft.TextField(value=" ", width = 200)
+        tf_fo_L = ft.TextField(value=" ", width = 200)
+        tf_fo_C = ft.TextField(value=" ", width = 200)
+
+        data_fof = ft.Row(controls=[tb_fo_f,tf_fo_f])
+        data_foL = ft.Row(controls=[tb_fo_L,tf_fo_L])
+        data_foC = ft.Row(controls=[tb_fo_C,tf_fo_C])
+
 
 
         lapok = ft.Tabs(
@@ -229,8 +251,16 @@ def main(page: ft.Page):
                                         ]
                                 ),
                         ),
-                        ft.Tab(text="fo",content=ft.Container(
-                                content=ft.Text("Rezonancia fekvencia számítása"), alignment=ft.alignment.center),
+                        ft.Tab(
+                                text="fo",
+                                content=ft.Column(
+                                        controls=[
+                                                ft.Text("Rezonancia fekvencia számítása"),
+                                                data_fof, 
+                                                data_foL, 
+                                                data_foC
+                                        ]
+                                )
                         ),
                         ft.Tab(text="RLC",content=ft.Container(
                                 content=ft.Text("soros RLC számítása"), alignment=ft.alignment.center),
