@@ -8,8 +8,31 @@ from math import pi
 def main(page: ft.Page):
 		
         def xl_f_clicked(e):			#  'f' változását lekezelő függvény	
-	        pass
-	        page.update()			#  grafikus felület frissítése
+                ok = True
+                try:
+                        xl = float(tf_xl_XL.value)   # 'XL' beolvasása szövegmezőből
+                        if xl <= 0:
+                                ok = False
+                                tf_xl_XL.value = tf_xl_XL.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_xl_XL.value = tf_xl_XL.value + ' ?'   # nem jó érték !
+                try:
+                        L = float(tf_xl_L.value)   # 'f' beolvasása szövegmezőből
+                        if L <= 0:
+                                ok = False
+                                tf_xl_L.value = tf_xl_L.value + ' ?'   # nem jó érték !               
+                except:
+                        ok = False
+                        tf_xl_L.value = tf_xl_L.value + ' ?'   # nem jó érték !
+                if ok:
+                        f = 1000*xl/(2*pi*L)        #  f   Hz-ben !!
+                        tf_xl_f.value = str(f)   # 'f' kiírása szövegmezőbe
+                else:
+                        tf_xl_f.value = "hiba!!"   # 'L' kiírása szövegmezőbe 
+
+                page.update()			#  grafikus felület frissítése
+
 
 
         def xl_L_clicked(e):			#  'L' változását lekezelő függvény	
