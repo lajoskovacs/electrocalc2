@@ -2,7 +2,7 @@
 
 import flet as ft
 from math import pi
-#from math import sqrt
+from math import sqrt
 #from math import atan			 
 
 def main(page: ft.Page):
@@ -173,7 +173,33 @@ def main(page: ft.Page):
 
 
         def fo_f_clicked(e):			#  fo-tab 'f' változását lekezelő függvény
-                pass
+                ok = True
+                try:
+                        L = float(tf_fo_L.value)   # 'f' beolvasása szövegmezőből
+                        if L <= 0:
+                                ok = False
+                                tf_fo_L.value = tf_fo_L.value + ' ?'   # nem jó érték !               
+                except:
+                        ok = False
+                        tf_fo_L.value = tf_fo_L.value + ' ?'   # nem jó érték !
+                try:
+                        C = float(tf_fo_C.value)   # 'C' beolvasása szövegmezőből
+                        if C <= 0:
+                                ok = False
+                                tf_fo_C.value = tf_fo_C.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_fo_C.value = tf_fo_C.value + ' ?'   # nem jó érték !
+                if ok:
+                        f = 1000000/(2*pi*sqrt(C*L))        #  f   Hz-ben !!
+                        tf_fo_f.value = str(f)   # 'f' kiírása szövegmezőbe
+                else:
+                        tf_fo_f.value = "hiba!!"        
+
+                page.update()			#  grafikus felület frissítése
+
+
+
 
         def fo_L_clicked(e):			#  fo-tab 'L' változását lekezelő függvény
                 pass
