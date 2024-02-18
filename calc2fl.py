@@ -214,7 +214,7 @@ def main(page: ft.Page):
 
         tb_fo_f = ft.TextButton("rezonancia frekvencia, fo (Hz)", on_click=fo_f_clicked)
         tb_fo_L = ft.TextButton("Induktivitás, L (mH)", on_click=fo_L_clicked)
-        tb_fo_C = ft.TextButton("Kapacitás (nF)", on_click=fo_C_clicked)
+        tb_fo_C = ft.TextButton("Kapacitás, C (nF)", on_click=fo_C_clicked)
         tf_fo_f = ft.TextField(value=" ", width = 200)
         tf_fo_L = ft.TextField(value=" ", width = 200)
         tf_fo_C = ft.TextField(value=" ", width = 200)
@@ -256,9 +256,9 @@ def main(page: ft.Page):
                                 content=ft.Column(
                                         controls=[
                                                 ft.Text("Rezonancia fekvencia számítása"),
-                                                data_fof, 
+                                                data_foC, 
                                                 data_foL, 
-                                                data_foC
+                                                data_fof
                                         ]
                                 )
                         ),
