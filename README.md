@@ -1,1 +1,1 @@
-# electrocalc2
+# electrical calculations (Xl, Xc, f0)
