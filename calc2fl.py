@@ -229,11 +229,14 @@ def main(page: ft.Page):
                                         ]
                                 ),
                         ),
-                        ft.Tab(text="R",content=ft.Container(
-                                content=ft.Text("R számítása"), alignment=ft.alignment.center),
+                        ft.Tab(text="fo",content=ft.Container(
+                                content=ft.Text("Rezonancia fekvencia számítása"), alignment=ft.alignment.center),
                         ),
                         ft.Tab(text="RLC",content=ft.Container(
                                 content=ft.Text("soros RLC számítása"), alignment=ft.alignment.center),
+                        ),
+                        ft.Tab(text="R",content=ft.Container(
+                                content=ft.Text("Ellenállás számítása"), alignment=ft.alignment.center),
                         ),
                 ],
                 expand=1,
