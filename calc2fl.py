@@ -91,7 +91,29 @@ def main(page: ft.Page):
 
 
         def xc_f_clicked(e):			#  xc-tab 'f' változását lekezelő függvény	
-	        pass
+                ok = True
+                try:
+                        xc = float(tf_xc_XC.value)   # 'XC' beolvasása szövegmezőből
+                        if xc <= 0:
+                                ok = False
+                                tf_xc_XC.value = tf_xc_XC.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_xc_XC.value = tf_xc_XC.value + ' ?'   # nem jó érték !
+                try:
+                        C = float(tf_xc_C.value)   # 'C' beolvasása szövegmezőből
+                        if C <= 0:
+                                ok = False
+                                tf_xc_C.value = tf_xc_C.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_xc_C.value = tf_xc_C.value + ' ?'   # nem jó érték !
+                if ok:
+                        f = 1000000000/(2*pi*C*xc)        #  f   Hz-ben !!
+                        tf_xc_f.value = str(f)   # 'f' kiírása szövegmezőbe
+                else:
+                        tf_xc_f.value = "hiba!!"        
+
 	        page.update()			#  grafikus felület frissítése
 
 
