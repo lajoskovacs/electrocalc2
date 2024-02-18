@@ -114,7 +114,7 @@ def main(page: ft.Page):
                 else:
                         tf_xc_f.value = "hiba!!"        
 
-	        page.update()			#  grafikus felület frissítése
+                page.update()			#  grafikus felület frissítése
 
 
         def xc_C_clicked(e):			#  xc-tab 'C' változását lekezelő függvény	
