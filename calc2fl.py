@@ -7,7 +7,7 @@ from math import pi
 
 def main(page: ft.Page):
 		
-        def xl_f_clicked(e):			#  'f' változását lekezelő függvény	
+        def xl_f_clicked(e):			# xl-tab 'f' változását lekezelő függvény	
                 ok = True
                 try:
                         xl = float(tf_xl_XL.value)   # 'XL' beolvasása szövegmezőből
@@ -35,7 +35,7 @@ def main(page: ft.Page):
 
 
 
-        def xl_L_clicked(e):			#  'L' változását lekezelő függvény	
+        def xl_L_clicked(e):			# xl-tab 'L' változását lekezelő függvény	
                 ok = True
                 try:
                         xl = float(tf_xl_XL.value)   # 'XL' beolvasása szövegmezőből
@@ -63,7 +63,7 @@ def main(page: ft.Page):
 
 
 
-        def xl_XL_clicked(e):			#  XL változását lekezelő függvény	
+        def xl_XL_clicked(e):			# xl-tab XL változását lekezelő függvény	
                 ok = True
                 try:
                         L = float(tf_xl_L.value)   # 'L' beolvasása szövegmezőből
@@ -90,19 +90,41 @@ def main(page: ft.Page):
                 page.update()			#  grafikus felület frissítése
 
 
-        def xc_f_clicked(e):			#  'f' változását lekezelő függvény	
+        def xc_f_clicked(e):			#  xc-tab 'f' változását lekezelő függvény	
 	        pass
 	        page.update()			#  grafikus felület frissítése
 
 
-        def xc_C_clicked(e):			#  'C' változását lekezelő függvény	
+        def xc_C_clicked(e):			#  xc-tab 'C' változását lekezelő függvény	
 	        pass
 	        page.update()			#  grafikus felület frissítése
 
 
-        def xc_XC_clicked(e):			#  'XC' változást lekezelő függvény	
-	        pass
-	        page.update()			#  grafikus felület frissítése
+        def xc_XC_clicked(e):			#  xc-tab 'XC' változást lekezelő függvény	
+                ok = True
+                try:
+                        C = float(tf_xc_C.value)   # 'C' beolvasása szövegmezőből
+                        if C <= 0:
+                                ok = False
+                                tf_xc_C.value = tf_xc_C.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_xc_C.value = tf_xc_C.value + ' ?'   # nem jó érték !
+                try:
+                        f = float(tf_xc_f.value)   # 'f' beolvasása szövegmezőből
+                        if f <= 0:
+                                ok = False
+                                tf_xc_f.value = tf_xc_f.value + ' ?'   # nem jó érték !               
+                except:
+                        ok = False
+                        tf_xc_f.value = tf_xc_f.value + ' ?'   # nem jó érték !
+                if ok:
+                        xc = 1000000000/(2*pi*f*C)        #  XC   Ohm-ban !!
+                        tf_xc_XC.value = str(xc)   # 'XL' kiírása szövegmezőbe
+                else:
+                        tf_xc_XC.value = "hiba!!"   # 'XL' kiírása szövegmezőbe 
+
+                page.update()			#  grafikus felület frissítése
 
 
         txt_cim= ft.Text(
