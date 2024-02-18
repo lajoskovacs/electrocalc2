@@ -29,7 +29,7 @@ def main(page: ft.Page):
                         f = 1000*xl/(2*pi*L)        #  f   Hz-ben !!
                         tf_xl_f.value = str(f)   # 'f' kiírása szövegmezőbe
                 else:
-                        tf_xl_f.value = "hiba!!"   # 'L' kiírása szövegmezőbe 
+                        tf_xl_f.value = "hiba!!"   
 
                 page.update()			#  grafikus felület frissítése
 
@@ -57,7 +57,7 @@ def main(page: ft.Page):
                         L = 1000*xl/(2*pi*f)        #  L   mH-ben !!
                         tf_xl_L.value = str(L)   # 'L' kiírása szövegmezőbe
                 else:
-                        tf_xl_L.value = "hiba!!"   # 'L' kiírása szövegmezőbe 
+                        tf_xl_L.value = "hiba!!"   
 
                 page.update()			#  grafikus felület frissítése
 
@@ -85,7 +85,7 @@ def main(page: ft.Page):
                         xl = 2*pi*f*L/1000         #  XL   Ohm-ban !!
                         tf_xl_XL.value = str(xl)   # 'XL' kiírása szövegmezőbe
                 else:
-                        tf_xl_XL.value = "hiba!!"   # 'XL' kiírása szövegmezőbe 
+                        tf_xl_XL.value = "hiba!!"   
 
                 page.update()			#  grafikus felület frissítése
 
@@ -96,8 +96,31 @@ def main(page: ft.Page):
 
 
         def xc_C_clicked(e):			#  xc-tab 'C' változását lekezelő függvény	
-	        pass
-	        page.update()			#  grafikus felület frissítése
+                ok = True
+                try:
+                        xc = float(tf_xc_XC.value)   # 'XC' beolvasása szövegmezőből
+                        if xc <= 0:
+                                ok = False
+                                tf_xc_XC.value = tf_xc_XC.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_xc_XC.value = tf_xc_XC.value + ' ?'   # nem jó érték !
+                try:
+                        f = float(tf_xc_f.value)   # 'f' beolvasása szövegmezőből
+                        if f <= 0:
+                                ok = False
+                                tf_xc_f.value = tf_xc_f.value + ' ?'   # nem jó érték !               
+                except:
+                        ok = False
+                        tf_xc_f.value = tf_xc_f.value + ' ?'   # nem jó érték !
+                if ok:
+                        C = 1000000000/(2*pi*f*xc)        #  C   nF-ban !!
+                        tf_xc_C.value = str(C)   # 'C' kiírása szövegmezőbe
+                else:
+                        tf_xc_C.value = "hiba!!"   
+
+                page.update()			#  grafikus felület frissítése
+
 
 
         def xc_XC_clicked(e):			#  xc-tab 'XC' változást lekezelő függvény	
@@ -122,7 +145,7 @@ def main(page: ft.Page):
                         xc = 1000000000/(2*pi*f*C)        #  XC   Ohm-ban !!
                         tf_xc_XC.value = str(xc)   # 'XL' kiírása szövegmezőbe
                 else:
-                        tf_xc_XC.value = "hiba!!"   # 'XL' kiírása szövegmezőbe 
+                        tf_xc_XC.value = "hiba!!"   
 
                 page.update()			#  grafikus felület frissítése
 
