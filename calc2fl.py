@@ -1,5 +1,5 @@
 # electro calculator, with Flet modul
-
+# version 0.1  2024.02.17.-
 import flet as ft
 from math import pi
 from math import sqrt
@@ -202,12 +202,60 @@ def main(page: ft.Page):
 
 
         def fo_L_click(e):			#  fo-tab 'L' változását lekezelő függvény
-                pass
+                ok = True
+                try:
+                        f = float(tf_fo_f.value)   # 'f' beolvasása szövegmezőből
+                        if f <= 0:
+                                ok = False
+                                tf_fo_f.value = tf_fo_f.value + ' ?'   # nem jó érték !               
+                except:
+                        ok = False
+                        tf_fo_f.value = tf_fo_f.value + ' ?'   # nem jó érték !
+                try:
+                        C = float(tf_fo_C.value)   # 'C' beolvasása szövegmezőből
+                        if C <= 0:
+                                ok = False
+                                tf_fo_C.value = tf_fo_C.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_fo_C.value = tf_fo_C.value + ' ?'   # nem jó érték !
+                if ok:
+                        L = 1000000000000/(4*pi*pi*f*f*C)       #  L  mH-ben !!
+                        tf_fo_L.value = str(L)   # 'f' kiírása szövegmezőbe
+                else:
+                        tf_fo_L.value = "hiba!!"        
+
+                page.update()			#  grafikus felület frissítése
+
 
         def fo_C_click(e):			#  fo-tab 'C' változását lekezelő függvény
-                pass
+                ok = True
+                try:
+                        f = float(tf_fo_f.value)   # 'f' beolvasása szövegmezőből
+                        if f <= 0:
+                                ok = False
+                                tf_fo_f.value = tf_fo_f.value + ' ?'   # nem jó érték !               
+                except:
+                        ok = False
+                        tf_fo_f.value = tf_fo_f.value + ' ?'   # nem jó érték !
+                try:
+                        L = float(tf_fo_L.value)   # 'L' beolvasása szövegmezőből
+                        if L <= 0:
+                                ok = False
+                                tf_fo_L.value = tf_fo_L.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_fo_L.value = tf_fo_L.value + ' ?'   # nem jó érték !
+                if ok:
+                        C = 1000000000000/(4*pi*pi*f*f*L)       #  C  nF-ban !!
+                        tf_fo_C.value = str(C)   # 'f' kiírása szövegmezőbe
+                else:
+                        tf_fo_C.value = "hiba!!"        
 
+                page.update()			#  grafikus felület frissítése
         
+
+
         txt_cim= ft.Text(
                 value=" Elektrotechnikai számítások ", 
                 color=ft.colors.WHITE, 
@@ -222,7 +270,7 @@ def main(page: ft.Page):
 
                 # tab1-XL  buttons, textfields
         tb_xl_f = ft.TextButton(
-                content= ft.Text(value="frekvencia, f (Hz)",size=20),
+                content= ft.Text(value="Frekvencia, f (Hz)",size=20),
                 style= buttstyle1,
                 on_click=xl_f_click
         )
@@ -246,7 +294,7 @@ def main(page: ft.Page):
 
               # tab2-XC  buttons, textfields
         tb_xc_f = ft.TextButton(
-                content= ft.Text(value="frekvencia, f (Hz)",size=20), 
+                content= ft.Text(value="Frekvencia, f (Hz)",size=20), 
                 style= buttstyle1,
                 on_click=xc_f_click
         )
@@ -271,7 +319,7 @@ def main(page: ft.Page):
 
                 # tab3-fo  buttons, textfields
         tb_fo_f = ft.TextButton(
-                content= ft.Text(value="rezonancia frekvencia, fo (Hz)",size=20), 
+                content= ft.Text(value="Rezonancia frekvencia, fo (Hz)",size=20), 
                 style= buttstyle1,  
                 on_click=fo_f_click
         )
