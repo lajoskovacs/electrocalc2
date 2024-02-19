@@ -7,7 +7,7 @@ from math import sqrt
 
 def main(page: ft.Page):
 		
-        def xl_f_clicked(e):			# xl-tab 'f' változását lekezelő függvény	
+        def xl_f_click(e):			# xl-tab 'f' változását lekezelő függvény	
                 ok = True
                 try:
                         xl = float(tf_xl_XL.value)   # 'XL' beolvasása szövegmezőből
@@ -18,7 +18,7 @@ def main(page: ft.Page):
                         ok = False
                         tf_xl_XL.value = tf_xl_XL.value + ' ?'   # nem jó érték !
                 try:
-                        L = float(tf_xl_L.value)   # 'f' beolvasása szövegmezőből
+                        L = float(tf_xl_L.value)   # 'L' beolvasása szövegmezőből
                         if L <= 0:
                                 ok = False
                                 tf_xl_L.value = tf_xl_L.value + ' ?'   # nem jó érték !               
@@ -35,7 +35,7 @@ def main(page: ft.Page):
 
 
 
-        def xl_L_clicked(e):			# xl-tab 'L' változását lekezelő függvény	
+        def xl_L_click(e):			# xl-tab 'L' változását lekezelő függvény	
                 ok = True
                 try:
                         xl = float(tf_xl_XL.value)   # 'XL' beolvasása szövegmezőből
@@ -63,7 +63,7 @@ def main(page: ft.Page):
 
 
 
-        def xl_XL_clicked(e):			# xl-tab XL változását lekezelő függvény	
+        def xl_XL_click(e):			# xl-tab XL változását lekezelő függvény	
                 ok = True
                 try:
                         L = float(tf_xl_L.value)   # 'L' beolvasása szövegmezőből
@@ -90,7 +90,7 @@ def main(page: ft.Page):
                 page.update()			#  grafikus felület frissítése
 
 
-        def xc_f_clicked(e):			#  xc-tab 'f' változását lekezelő függvény	
+        def xc_f_click(e):			#  xc-tab 'f' változását lekezelő függvény	
                 ok = True
                 try:
                         xc = float(tf_xc_XC.value)   # 'XC' beolvasása szövegmezőből
@@ -117,7 +117,7 @@ def main(page: ft.Page):
                 page.update()			#  grafikus felület frissítése
 
 
-        def xc_C_clicked(e):			#  xc-tab 'C' változását lekezelő függvény	
+        def xc_C_click(e):			#  xc-tab 'C' változását lekezelő függvény	
                 ok = True
                 try:
                         xc = float(tf_xc_XC.value)   # 'XC' beolvasása szövegmezőből
@@ -145,7 +145,7 @@ def main(page: ft.Page):
 
 
 
-        def xc_XC_clicked(e):			#  xc-tab 'XC' változást lekezelő függvény	
+        def xc_XC_click(e):			#  xc-tab 'XC' változást lekezelő függvény	
                 ok = True
                 try:
                         C = float(tf_xc_C.value)   # 'C' beolvasása szövegmezőből
@@ -172,10 +172,10 @@ def main(page: ft.Page):
                 page.update()			#  grafikus felület frissítése
 
 
-        def fo_f_clicked(e):			#  fo-tab 'f' változását lekezelő függvény
+        def fo_f_click(e):			#  fo-tab 'f' változását lekezelő függvény
                 ok = True
                 try:
-                        L = float(tf_fo_L.value)   # 'f' beolvasása szövegmezőből
+                        L = float(tf_fo_L.value)   # 'L' beolvasása szövegmezőből
                         if L <= 0:
                                 ok = False
                                 tf_fo_L.value = tf_fo_L.value + ' ?'   # nem jó érték !               
@@ -201,10 +201,10 @@ def main(page: ft.Page):
 
 
 
-        def fo_L_clicked(e):			#  fo-tab 'L' változását lekezelő függvény
+        def fo_L_click(e):			#  fo-tab 'L' változását lekezelő függvény
                 pass
 
-        def fo_C_clicked(e):			#  fo-tab 'C' változását lekezelő függvény
+        def fo_C_click(e):			#  fo-tab 'C' változását lekezelő függvény
                 pass
 
         
@@ -224,17 +224,17 @@ def main(page: ft.Page):
         tb_xl_f = ft.TextButton(
                 content= ft.Text(value="frekvencia, f (Hz)",size=20),
                 style= buttstyle1,
-                on_click=xl_f_clicked
+                on_click=xl_f_click
         )
         tb_xl_L = ft.TextButton(
                 content= ft.Text(value="Induktivitás, L (mH)",size=20),
                 style= buttstyle1, 
-                on_click=xl_L_clicked
+                on_click=xl_L_click
         )
         tb_xl_XL = ft.TextButton(
                 content= ft.Text(value="XL = 2*pi*f*L (ohm)",size=20),
                 style= buttstyle1,
-                on_click=xl_XL_clicked
+                on_click=xl_XL_click
         )
         tf_xl_f = ft.TextField(value=" ", width = 200)
         tf_xl_L = ft.TextField(value=" ", width = 200)
@@ -248,17 +248,17 @@ def main(page: ft.Page):
         tb_xc_f = ft.TextButton(
                 content= ft.Text(value="frekvencia, f (Hz)",size=20), 
                 style= buttstyle1,
-                on_click=xc_f_clicked
+                on_click=xc_f_click
         )
         tb_xc_C = ft.TextButton(
                 content= ft.Text(value="Kapacitás, C (nF)",size=20), 
                 style= buttstyle1, 
-                on_click=xc_C_clicked
+                on_click=xc_C_click
         )
         tb_xc_XC = ft.TextButton(
                 content= ft.Text(value="XC = 1/(2*pi*f*C)  (ohm)",size=20), 
                 style= buttstyle1, 
-                on_click=xc_XC_clicked
+                on_click=xc_XC_click
         )
         tf_xc_f = ft.TextField(value=" ", width = 200)
         tf_xc_C = ft.TextField(value=" ", width = 200)
@@ -273,17 +273,17 @@ def main(page: ft.Page):
         tb_fo_f = ft.TextButton(
                 content= ft.Text(value="rezonancia frekvencia, fo (Hz)",size=20), 
                 style= buttstyle1,  
-                on_click=fo_f_clicked
+                on_click=fo_f_click
         )
         tb_fo_L = ft.TextButton(
                 content= ft.Text(value="Induktivitás, L (mH)",size=20),
                 style= buttstyle1,  
-                on_click=fo_L_clicked
+                on_click=fo_L_click
         )
         tb_fo_C = ft.TextButton(
                 content= ft.Text(value="Kapacitás, C (nF)",size=20), 
                 style= buttstyle1, 
-                on_click=fo_C_clicked
+                on_click=fo_C_click
         )
         tf_fo_f = ft.TextField(value=" ", width = 200)
         tf_fo_L = ft.TextField(value=" ", width = 200)
