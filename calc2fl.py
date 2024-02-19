@@ -212,13 +212,27 @@ def main(page: ft.Page):
                 value=" Elektrotechnikai számítások ", 
                 color=ft.colors.WHITE, 
                 bgcolor=ft.colors.ORANGE_800, 
+                size=30,
                 theme_style=ft.TextThemeStyle.TITLE_LARGE, 
-                width = 300
+                width = 800
         )	  #  egy cimke
 
-        tb_xl_f = ft.TextButton("frekvencia, f (Hz)", on_click=xl_f_clicked)
-        tb_xl_L = ft.TextButton("Induktivitás, L (mH)", on_click=xl_L_clicked)
-        tb_xl_XL = ft.TextButton("XL = 2*pi*f*L (ohm)", on_click=xl_XL_clicked)
+        buttstyle1 = ft.ButtonStyle(bgcolor=ft.colors.YELLOW)
+        tb_xl_f = ft.TextButton(
+                content= ft.Text(value="frekvencia, f (Hz)",size=20),
+                style= buttstyle1,
+                on_click=xl_f_clicked
+        )
+        tb_xl_L = ft.TextButton(
+                content= ft.Text(value="Induktivitás, L (mH)",size=20),
+                style= buttstyle1, 
+                on_click=xl_L_clicked
+        )
+        tb_xl_XL = ft.TextButton(
+                content= ft.Text(value="XL = 2*pi*f*L (ohm)",size=20),
+                style= buttstyle1,
+                on_click=xl_XL_clicked
+        )
         tf_xl_f = ft.TextField(value=" ", width = 200)
         tf_xl_L = ft.TextField(value=" ", width = 200)
         tf_xl_XL = ft.TextField(value=" ", width = 200)
@@ -227,7 +241,11 @@ def main(page: ft.Page):
         data_xlL = ft.Row(controls=[tb_xl_L,tf_xl_L])
         data_xlXL = ft.Row(controls=[tb_xl_XL,tf_xl_XL])
 
-        tb_xc_f = ft.TextButton("frekvencia, f (Hz)", on_click=xc_f_clicked)
+        tb_xc_f = ft.TextButton(
+                content= ft.Text(value="frekvencia, f (Hz)",size=20), 
+                style= buttstyle1,
+                on_click=xc_f_clicked
+        )
         tb_xc_C = ft.TextButton("Kapacitás, C (nF)", on_click=xc_C_clicked)
         tb_xc_XC = ft.TextButton("XC = 1/(2*pi*f*C)  (ohm)", on_click=xc_XC_clicked)
         tf_xc_f = ft.TextField(value=" ", width = 200)
@@ -259,7 +277,7 @@ def main(page: ft.Page):
                                 text="XL",
                                 content=ft.Column(
                                         controls=[
-                                                ft.Text("Induktív reaktancia számítása"), 
+                                                ft.Text("Induktív reaktancia számítása",size=20), 
                                                 data_xlf, 
                                                 data_xlL, 
                                                 data_xlXL
@@ -270,7 +288,7 @@ def main(page: ft.Page):
                                 text="XC",
                                 content=ft.Column(
                                         controls=[
-                                                ft.Text("Kapacitív reaktancia számítása"), 
+                                                ft.Text("Kapacitív reaktancia számítása",size=20), 
                                                 data_xcf, 
                                                 data_xcC, 
                                                 data_xcXC
@@ -281,7 +299,7 @@ def main(page: ft.Page):
                                 text="fo",
                                 content=ft.Column(
                                         controls=[
-                                                ft.Text("Rezonancia fekvencia számítása"),
+                                                ft.Text("Rezonancia fekvencia számítása",size=20),
                                                 data_foC, 
                                                 data_foL, 
                                                 data_fof
