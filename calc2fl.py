@@ -207,7 +207,7 @@ def main(page: ft.Page):
         def fo_C_clicked(e):			#  fo-tab 'C' változását lekezelő függvény
                 pass
 
-
+        
         txt_cim= ft.Text(
                 value=" Elektrotechnikai számítások ", 
                 color=ft.colors.WHITE, 
@@ -217,7 +217,10 @@ def main(page: ft.Page):
                 width = 800
         )	  #  egy cimke
 
-        buttstyle1 = ft.ButtonStyle(bgcolor=ft.colors.YELLOW)
+        buttstyle1 = ft.ButtonStyle(bgcolor=ft.colors.YELLOW)   # button style
+        textstyle1 = ft.TextStyle(size=30,color="pink600",weight=ft.FontWeight.W_900)
+
+                # tab1-XL  buttons, textfields
         tb_xl_f = ft.TextButton(
                 content= ft.Text(value="frekvencia, f (Hz)",size=20),
                 style= buttstyle1,
@@ -241,13 +244,22 @@ def main(page: ft.Page):
         data_xlL = ft.Row(controls=[tb_xl_L,tf_xl_L])
         data_xlXL = ft.Row(controls=[tb_xl_XL,tf_xl_XL])
 
+              # tab2-XC  buttons, textfields
         tb_xc_f = ft.TextButton(
                 content= ft.Text(value="frekvencia, f (Hz)",size=20), 
                 style= buttstyle1,
                 on_click=xc_f_clicked
         )
-        tb_xc_C = ft.TextButton("Kapacitás, C (nF)", on_click=xc_C_clicked)
-        tb_xc_XC = ft.TextButton("XC = 1/(2*pi*f*C)  (ohm)", on_click=xc_XC_clicked)
+        tb_xc_C = ft.TextButton(
+                content= ft.Text(value="Kapacitás, C (nF)",size=20), 
+                style= buttstyle1, 
+                on_click=xc_C_clicked
+        )
+        tb_xc_XC = ft.TextButton(
+                content= ft.Text(value="XC = 1/(2*pi*f*C)  (ohm)",size=20), 
+                style= buttstyle1, 
+                on_click=xc_XC_clicked
+        )
         tf_xc_f = ft.TextField(value=" ", width = 200)
         tf_xc_C = ft.TextField(value=" ", width = 200)
         tf_xc_XC = ft.TextField(value=" ", width = 200)
@@ -256,9 +268,23 @@ def main(page: ft.Page):
         data_xcC = ft.Row(controls=[tb_xc_C,tf_xc_C])
         data_xcXC = ft.Row(controls=[tb_xc_XC,tf_xc_XC])
 
-        tb_fo_f = ft.TextButton("rezonancia frekvencia, fo (Hz)", on_click=fo_f_clicked)
-        tb_fo_L = ft.TextButton("Induktivitás, L (mH)", on_click=fo_L_clicked)
-        tb_fo_C = ft.TextButton("Kapacitás, C (nF)", on_click=fo_C_clicked)
+
+                # tab3-fo  buttons, textfields
+        tb_fo_f = ft.TextButton(
+                content= ft.Text(value="rezonancia frekvencia, fo (Hz)",size=20), 
+                style= buttstyle1,  
+                on_click=fo_f_clicked
+        )
+        tb_fo_L = ft.TextButton(
+                content= ft.Text(value="Induktivitás, L (mH)",size=20),
+                style= buttstyle1,  
+                on_click=fo_L_clicked
+        )
+        tb_fo_C = ft.TextButton(
+                content= ft.Text(value="Kapacitás, C (nF)",size=20), 
+                style= buttstyle1, 
+                on_click=fo_C_clicked
+        )
         tf_fo_f = ft.TextField(value=" ", width = 200)
         tf_fo_L = ft.TextField(value=" ", width = 200)
         tf_fo_C = ft.TextField(value=" ", width = 200)
@@ -267,8 +293,7 @@ def main(page: ft.Page):
         data_foL = ft.Row(controls=[tb_fo_L,tf_fo_L])
         data_foC = ft.Row(controls=[tb_fo_C,tf_fo_C])
 
-
-
+                # tabs
         lapok = ft.Tabs(
                 selected_index=0,  
                 animation_duration=300,	# váltás a nézetek között ms
@@ -277,7 +302,7 @@ def main(page: ft.Page):
                                 text="XL",
                                 content=ft.Column(
                                         controls=[
-                                                ft.Text("Induktív reaktancia számítása",size=20), 
+                                                ft.Text("Induktív reaktancia számítása",style=textstyle1), 
                                                 data_xlf, 
                                                 data_xlL, 
                                                 data_xlXL
@@ -288,7 +313,7 @@ def main(page: ft.Page):
                                 text="XC",
                                 content=ft.Column(
                                         controls=[
-                                                ft.Text("Kapacitív reaktancia számítása",size=20), 
+                                                ft.Text("Kapacitív reaktancia számítása",style=textstyle1), 
                                                 data_xcf, 
                                                 data_xcC, 
                                                 data_xcXC
@@ -299,7 +324,7 @@ def main(page: ft.Page):
                                 text="fo",
                                 content=ft.Column(
                                         controls=[
-                                                ft.Text("Rezonancia fekvencia számítása",size=20),
+                                                ft.Text("Rezonancia fekvencia számítása",style=textstyle1),
                                                 data_foC, 
                                                 data_foL, 
                                                 data_fof
