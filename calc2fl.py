@@ -33,7 +33,7 @@ def main(page: ft.Page):
 
                 page.update()			#  grafikus felület frissítése
 
-
+        ###########################################################################################
 
         def xl_L_click(e):			# xl-tab 'L' változását lekezelő függvény	
                 ok = True
@@ -61,7 +61,7 @@ def main(page: ft.Page):
 
                 page.update()			#  grafikus felület frissítése
 
-
+       ###########################################################################################
 
         def xl_XL_click(e):			# xl-tab XL változását lekezelő függvény	
                 ok = True
@@ -89,6 +89,7 @@ def main(page: ft.Page):
 
                 page.update()			#  grafikus felület frissítése
 
+       ###########################################################################################
 
         def xc_f_click(e):			#  xc-tab 'f' változását lekezelő függvény	
                 ok = True
@@ -116,6 +117,7 @@ def main(page: ft.Page):
 
                 page.update()			#  grafikus felület frissítése
 
+       ###########################################################################################
 
         def xc_C_click(e):			#  xc-tab 'C' változását lekezelő függvény	
                 ok = True
@@ -143,7 +145,7 @@ def main(page: ft.Page):
 
                 page.update()			#  grafikus felület frissítése
 
-
+       ###########################################################################################
 
         def xc_XC_click(e):			#  xc-tab 'XC' változást lekezelő függvény	
                 ok = True
@@ -171,6 +173,7 @@ def main(page: ft.Page):
 
                 page.update()			#  grafikus felület frissítése
 
+       ###########################################################################################
 
         def fo_f_click(e):			#  fo-tab 'f' változását lekezelő függvény
                 ok = True
@@ -198,8 +201,7 @@ def main(page: ft.Page):
 
                 page.update()			#  grafikus felület frissítése
 
-
-
+       ###########################################################################################
 
         def fo_L_click(e):			#  fo-tab 'L' változását lekezelő függvény
                 ok = True
@@ -227,6 +229,7 @@ def main(page: ft.Page):
 
                 page.update()			#  grafikus felület frissítése
 
+       ###########################################################################################
 
         def fo_C_click(e):			#  fo-tab 'C' változását lekezelő függvény
                 ok = True
@@ -253,8 +256,15 @@ def main(page: ft.Page):
                         tf_fo_C.value = "hiba!!"        
 
                 page.update()			#  grafikus felület frissítése
-        
 
+
+       ###########################################################################################
+
+        def rlc_Ze_click(e):			#  rlc-tab 'Ze' változását lekezelő függvény
+                ok = True  
+
+        
+       ###########################################################################################
 
         txt_cim= ft.Text(
                 value=" Elektrotechnikai számítások ", 
@@ -268,6 +278,7 @@ def main(page: ft.Page):
         buttstyle1 = ft.ButtonStyle(bgcolor=ft.colors.YELLOW)   # button style
         textstyle1 = ft.TextStyle(size=30,color="pink600",weight=ft.FontWeight.W_900)
 
+       ###########################################################################################
                 # tab1-XL  buttons, textfields
         tb_xl_f = ft.TextButton(
                 content= ft.Text(value="Frekvencia, f (Hz)",size=20),
@@ -292,6 +303,7 @@ def main(page: ft.Page):
         data_xlL = ft.Row(controls=[tb_xl_L,tf_xl_L])
         data_xlXL = ft.Row(controls=[tb_xl_XL,tf_xl_XL])
 
+       ###########################################################################################
               # tab2-XC  buttons, textfields
         tb_xc_f = ft.TextButton(
                 content= ft.Text(value="Frekvencia, f (Hz)",size=20), 
@@ -316,7 +328,7 @@ def main(page: ft.Page):
         data_xcC = ft.Row(controls=[tb_xc_C,tf_xc_C])
         data_xcXC = ft.Row(controls=[tb_xc_XC,tf_xc_XC])
 
-
+       ###########################################################################################
                 # tab3-fo  buttons, textfields
         tb_fo_f = ft.TextButton(
                 content= ft.Text(value="Rezonancia frekvencia, fo (Hz)",size=20), 
@@ -341,6 +353,61 @@ def main(page: ft.Page):
         data_foL = ft.Row(controls=[tb_fo_L,tf_fo_L])
         data_foC = ft.Row(controls=[tb_fo_C,tf_fo_C])
 
+       ###########################################################################################
+                # tab4-RLC  buttons, textfields
+        tb_rlc_f = ft.TextButton(
+                content= ft.Text(value="Frekvencia, f (Hz)",size=20), 
+                style= buttstyle1,  
+               # on_click=rlc_f_click
+        )
+        tb_rlc_L = ft.TextButton(
+                content= ft.Text(value="Induktivitás, L (mH)",size=20),
+                style= buttstyle1,  
+              #  on_click=rlc_L_click
+        )
+        tb_rlc_C = ft.TextButton(
+                content= ft.Text(value="Kapacitás, C (nF)",size=20), 
+                style= buttstyle1, 
+             #  on_click=rlc_C_click
+        )
+        tb_rlc_R = ft.TextButton(
+                content= ft.Text(value="Ellenállás, R (ohm)",size=20), 
+                style= buttstyle1, 
+             #  on_click=rlc_R_click
+        )
+        tb_rlc_Ze = ft.TextButton(
+                content= ft.Text(value="Impedancia, Ze (ohm)",size=20), 
+                style= buttstyle1, 
+                on_click=rlc_Ze_click
+        )
+        tb_rlc_fi = ft.TextButton(
+                content= ft.Text(value="Fázisszög, fi (fok)",size=20), 
+                style= buttstyle1, 
+             #  on_click=rlc_fi_click
+        )
+        tb_rlc_fo = ft.TextButton(
+                content= ft.Text(value="Rezonancia frekvencia, fo (Hz)",size=20), 
+                style= buttstyle1, 
+             #  on_click=rlc_fo_click
+        )
+
+        tf_rlc_f = ft.TextField(value=" ", width = 200)
+        tf_rlc_L = ft.TextField(value=" ", width = 200)
+        tf_rlc_C = ft.TextField(value=" ", width = 200)
+        tf_rlc_R = ft.TextField(value=" ", width = 200)
+        tf_rlc_Ze = ft.Text(value=" ", width = 200)
+        tf_rlc_fi = ft.Text(value=" ", width = 200)
+        tf_rlc_fo = ft.Text(value=" ", width = 200)
+
+        data_rlcf = ft.Row(controls=[tb_rlc_f,tf_rlc_f])
+        data_rlcL = ft.Row(controls=[tb_rlc_L,tf_rlc_L])
+        data_rlcC = ft.Row(controls=[tb_rlc_C,tf_rlc_C])
+        data_rlcR = ft.Row(controls=[tb_rlc_R,tf_rlc_R])
+        data_rlcZe = ft.Row(controls=[tb_rlc_Ze,tf_rlc_Ze])
+        data_rlcfi = ft.Row(controls=[tb_rlc_fi,tf_rlc_fi])
+        data_rlcfo = ft.Row(controls=[tb_rlc_fo,tf_rlc_fo])
+
+       ###########################################################################################
                 # tabs
         lapok = ft.Tabs(
                 selected_index=0,  
@@ -379,8 +446,20 @@ def main(page: ft.Page):
                                         ]
                                 )
                         ),
-                        ft.Tab(text="RLC",content=ft.Container(
-                                content=ft.Text("soros RLC számítása"), alignment=ft.alignment.center),
+                        ft.Tab(
+                                text="RLC",
+                                content=ft.Column(
+                                        controls=[
+                                                ft.Text("soros RLC számítása",style=textstyle1),
+                                                data_rlcf,      
+                                                data_rlcL,
+                                                data_rlcC,
+                                                data_rlcR,
+                                                data_rlcZe,
+                                                data_rlcfi,
+                                                data_rlcfo,
+                                        ]
+                                )
                         ),
                         ft.Tab(text="R",content=ft.Container(
                                 content=ft.Text("Ellenállás számítása"), alignment=ft.alignment.center),
@@ -388,6 +467,8 @@ def main(page: ft.Page):
                 ],
                 expand=1,
         )
+
+       ###########################################################################################
 
         page.add(
                 txt_cim,
