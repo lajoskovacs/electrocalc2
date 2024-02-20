@@ -332,6 +332,19 @@ def main(page: ft.Page):
 
       ###########################################################################################
 
+        def r_ro_sel_change(e):			#  r-tab 'ró' változását lekezelő függvény
+                if tf_r_ro_sel.value == "Réz":
+                    tf_r_ro.value = str(0.0175)
+                elif tf_r_ro_sel.value == "Alumínium":
+                    tf_r_ro.value = str(0.028)
+                elif tf_r_ro_sel.value == "Arany":
+                    tf_r_ro.value = str(0.023)
+                elif tf_r_ro_sel.value == "Ezüst":
+                    tf_r_ro.value = str(0.016)
+
+
+      ###########################################################################################
+
 
         txt_cim= ft.Text(
                 value=" Elektrotechnikai számítások ", 
@@ -497,6 +510,7 @@ def main(page: ft.Page):
             		ft.dropdown.Option("Arany"), 
                         ft.dropdown.Option("Ezüst")
                         ], 
+                on_change = r_ro_sel_change
 	)
         tf_r_ro = ft.TextField(value=" ", width = 150)
 
