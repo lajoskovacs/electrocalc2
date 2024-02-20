@@ -373,7 +373,7 @@ def main(page: ft.Page):
        ###########################################################################################
               # tab2-XC  buttons, textfields
         tb_xc_f = ft.TextButton(
-                content= ft.Text(value="Frekvencia, f (Hz)",size=20), width=200, 
+                content= ft.Text(value="Frekvencia, f (Hz)",size=20, width=200), 
                 style= buttstyle1,
                 on_click=xc_f_click
         )
@@ -470,7 +470,7 @@ def main(page: ft.Page):
       ###########################################################################################
               # tab5-R  buttons, textfields
         tb_r_l = ft.TextButton(
-                content= ft.Text(value="Hossz, l (m)",size=20), width=200, 
+                content= ft.Text(value="Hossz, l (m)",size=20, width=200), 
                 style= buttstyle1,
         )
         tb_r_d = ft.TextButton(
@@ -482,13 +482,27 @@ def main(page: ft.Page):
                 style= buttstyle1, 
                 on_click=r_R_click
         )
+        tb_r_ro = ft.TextButton(
+                content= ft.Text(value="Anyag,  ró        (ohm*mm2/m)",size=20, width=200), 
+                style= buttstyle1, 
+        )
         tf_r_l = ft.TextField(value=" ", width = 200)
         tf_r_d = ft.TextField(value=" ", width = 200)
         tf_r_R = ft.TextField(value=" ", width = 200)
+        tf_r_ro = ft.Dropdown(
+        	width=200,
+        	options=[
+            		ft.dropdown.Option("Réz"),
+            		ft.dropdown.Option("Alumínium"),
+            		ft.dropdown.Option("Arany"), 
+                        ft.dropdown.Option("Ezüst")
+                        ], 
+	)
 
         data_rl = ft.Row(controls=[tb_r_l,tf_r_l])
         data_rd = ft.Row(controls=[tb_r_d,tf_r_d])
         data_rR = ft.Row(controls=[tb_r_R,tf_r_R])
+        data_rro = ft.Row(controls=[tb_r_ro,tf_r_ro])
 
        ###########################################################################################
                 # tabs
@@ -549,7 +563,8 @@ def main(page: ft.Page):
                                         controls=[
                                                 ft.Text("Vezeték ellenállás számítása",style=textstyle1),
                                                 data_rl, 
-                                                data_rd, 
+                                                data_rd,
+                                                data_rro, 
                                                 data_rR
                                         ]
                                 )
