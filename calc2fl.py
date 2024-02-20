@@ -385,19 +385,13 @@ def main(page: ft.Page):
                 style= buttstyle1, 
              #  on_click=rlc_fi_click
         )
-        tb_rlc_fo = ft.TextButton(
-                content= ft.Text(value="Rezonancia frekvencia, fo (Hz)",size=20), 
-                style= buttstyle1, 
-             #  on_click=rlc_fo_click
-        )
 
         tf_rlc_f = ft.TextField(value=" ", width = 200)
         tf_rlc_L = ft.TextField(value=" ", width = 200)
         tf_rlc_C = ft.TextField(value=" ", width = 200)
         tf_rlc_R = ft.TextField(value=" ", width = 200)
-        tf_rlc_Ze = ft.Text(value=" ", width = 200)
-        tf_rlc_fi = ft.Text(value=" ", width = 200)
-        tf_rlc_fo = ft.Text(value=" ", width = 200)
+        tf_rlc_Ze = ft.TextField(value=" ", width = 200)
+        tf_rlc_fi = ft.TextField(value=" ", width = 200)
 
         data_rlcf = ft.Row(controls=[tb_rlc_f,tf_rlc_f])
         data_rlcL = ft.Row(controls=[tb_rlc_L,tf_rlc_L])
@@ -405,7 +399,7 @@ def main(page: ft.Page):
         data_rlcR = ft.Row(controls=[tb_rlc_R,tf_rlc_R])
         data_rlcZe = ft.Row(controls=[tb_rlc_Ze,tf_rlc_Ze])
         data_rlcfi = ft.Row(controls=[tb_rlc_fi,tf_rlc_fi])
-        data_rlcfo = ft.Row(controls=[tb_rlc_fo,tf_rlc_fo])
+
 
        ###########################################################################################
                 # tabs
@@ -457,7 +451,6 @@ def main(page: ft.Page):
                                                 data_rlcR,
                                                 data_rlcZe,
                                                 data_rlcfi,
-                                                data_rlcfo,
                                         ]
                                 )
                         ),
