@@ -327,7 +327,38 @@ def main(page: ft.Page):
 
         def r_R_click(e):			#  r-tab 'R' változását lekezelő függvény
                 ok = True
+                try:
+                        l = float(tf_r_l.value)   # 'l-hossz' beolvasása szövegmezőből
+                        if l <= 0:
+                                ok = False
+                                tf_r_l.value = tf_r_l.value + ' ?'   # nem jó érték !               
+                except:
+                        ok = False
+                        tf_r_l.value = tf_r_l.value + ' ?'   # nem jó érték !
+                try:
+                        d = float(tf_r_d.value)   # 'd-átmérő' beolvasása szövegmezőből
+                        if d <= 0:
+                                ok = False
+                                tf_r_d.value = tf_r_d.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_r_d.value = tf_r_d.value + ' ?'   # nem jó érték !
+                try:
+                        ro = float(tf_r_ro.value)   # fajlagos ellenállás beolvasása szövegmezőből
+                        if ro <= 0:
+                                ok = False
+                                tf_r_ro.value = tf_r_ro.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_r_ro.value = tf_r_ro.value + ' ?'   # nem jó érték !                       
+                if ok:
+                        A = d*d*pi/4            # keresztmetszet   mm2
+                        R = ro*l/A       #  ohm-ban !!
+                        tf_r_R.value = str(R)   # 'R' kiírása szövegmezőbe
+                else:
+                        tf_r_R.value = "hiba!!"        
 
+                page.update()		
 
 
       ###########################################################################################
