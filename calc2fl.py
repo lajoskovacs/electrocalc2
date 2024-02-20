@@ -1,5 +1,5 @@
 # electro calculator, with Flet modul
-# version 0.1  2024.02.17.-
+# version 0.1  2024.02.17.- 2024.02.22.   KL
 import flet as ft
 from math import pi
 from math import sqrt
@@ -325,6 +325,14 @@ def main(page: ft.Page):
         
        ###########################################################################################
 
+        def r_R_click(e):			#  r-tab 'R' változását lekezelő függvény
+                ok = True
+
+
+
+      ###########################################################################################
+
+
         txt_cim= ft.Text(
                 value=" Elektrotechnikai számítások ", 
                 color=ft.colors.WHITE, 
@@ -459,6 +467,28 @@ def main(page: ft.Page):
         data_rlcZe = ft.Row(controls=[tb_rlc_Ze,tf_rlc_Ze])
         data_rlcfi = ft.Row(controls=[tb_rlc_fi,tf_rlc_fi])
 
+      ###########################################################################################
+              # tab5-R  buttons, textfields
+        tb_r_l = ft.TextButton(
+                content= ft.Text(value="Hossz, l (m)",size=20), width=200, 
+                style= buttstyle1,
+        )
+        tb_r_d = ft.TextButton(
+                content= ft.Text(value="Átmérő, d (mm)",size=20, width=200), 
+                style= buttstyle1, 
+        )
+        tb_r_R = ft.TextButton(
+                content= ft.Text(value="Ellenállás  R (ohm)",size=20, width=200), 
+                style= buttstyle1, 
+                on_click=r_R_click
+        )
+        tf_r_l = ft.TextField(value=" ", width = 200)
+        tf_r_d = ft.TextField(value=" ", width = 200)
+        tf_r_R = ft.TextField(value=" ", width = 200)
+
+        data_rl = ft.Row(controls=[tb_r_l,tf_r_l])
+        data_rd = ft.Row(controls=[tb_r_d,tf_r_d])
+        data_rR = ft.Row(controls=[tb_r_R,tf_r_R])
 
        ###########################################################################################
                 # tabs
@@ -513,9 +543,18 @@ def main(page: ft.Page):
                                         ]
                                 )
                         ),
-                        ft.Tab(text="R",content=ft.Container(
-                                content=ft.Text("Ellenállás számítása"), alignment=ft.alignment.center),
+                        ft.Tab(
+                                text="R",
+                                content=ft.Column(
+                                        controls=[
+                                                ft.Text("Vezeték ellenállás számítása",style=textstyle1),
+                                                data_rl, 
+                                                data_rd, 
+                                                data_rR
+                                        ]
+                                )
                         ),
+   
                 ],
                 expand=1,
         )
