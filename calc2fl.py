@@ -3,7 +3,7 @@
 import flet as ft
 from math import pi
 from math import sqrt
-#from math import atan			 
+from math import atan			 
 
 def main(page: ft.Page):
 		
@@ -262,6 +262,65 @@ def main(page: ft.Page):
 
         def rlc_Ze_click(e):			#  rlc-tab 'Ze' változását lekezelő függvény
                 ok = True  
+                try:
+                        f = float(tf_rlc_f.value)   # 'f' beolvasása szövegmezőből
+                        if f <= 0:
+                                ok = False
+                                tf_rlc_f.value = tf_rlc_f.value + ' ?'   # nem jó érték !               
+                except:
+                        ok = False
+                        tf_rlc_f.value = tf_rlc_f.value + ' ?'   # nem jó érték !
+                try:
+                        L = float(tf_rlc_L.value)   # 'L' beolvasása szövegmezőből
+                        if L < 0:
+                                ok = False
+                                tf_rlc_L.value = tf_rlc_L.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_rlc_L.value = tf_rlc_L.value + ' ?'   # nem jó érték 
+                try:
+                        C = float(tf_rlc_C.value)   # 'C' beolvasása szövegmezőből
+                        if C < 0:
+                                ok = False
+                                tf_rlc_C.value = tf_rlc_C.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_rlc_C.value = tf_rlc_C.value + ' ?'   # nem jó érték !
+                try:
+                        R = float(tf_rlc_R.value)   # 'R' beolvasása szövegmezőből
+                        if R < 0:
+                                ok = False
+                                tf_rlc_R.value = tf_rlc_R.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_rlc_R.value = tf_rlc_R.value + ' ?'   # nem jó érték !                       
+                if ok:
+                        if L == 0:
+                                xl = 0
+                        else:
+                                xl = 2*pi*f*L/1000         #  XL   Ohm-ban !!
+                        if C == 0:
+                                xc = 0
+                        else:
+                                xc = 1000000000/(2*pi*f*C)        #  XC   Ohm-ban !!
+                        Ze = sqrt(R**2+(xl-xc)**2)
+                        if R == 0:
+                                if xl>xc:
+                                        fi = 90
+                                elif xc>xl:
+                                        fi = -90
+                                else:
+                                        fi = ""
+                        else:
+                                fi = 180*atan((xl-xc)/R)/pi
+
+                        tf_rlc_Ze.value = str(Ze)   # 'Ze' kiírása szövegmezőbe
+                        tf_rlc_fi.value = str(fi)   # 'fi' kiírása szövegmezőbe
+                else:
+                        tf_rlc_Ze.value = "hiba!!"     
+                        tf_rlc_fi.value = "hiba!!"     
+
+                page.update()			#  grafikus felület frissítése
 
         
        ###########################################################################################
