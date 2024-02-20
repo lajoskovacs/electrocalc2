@@ -489,8 +489,8 @@ def main(page: ft.Page):
         tf_r_l = ft.TextField(value=" ", width = 200)
         tf_r_d = ft.TextField(value=" ", width = 200)
         tf_r_R = ft.TextField(value=" ", width = 200)
-        tf_r_ro = ft.Dropdown(
-        	width=200,
+        tf_r_ro_sel = ft.Dropdown(
+        	width=140,
         	options=[
             		ft.dropdown.Option("Réz"),
             		ft.dropdown.Option("Alumínium"),
@@ -498,11 +498,12 @@ def main(page: ft.Page):
                         ft.dropdown.Option("Ezüst")
                         ], 
 	)
+        tf_r_ro = ft.TextField(value=" ", width = 150)
 
         data_rl = ft.Row(controls=[tb_r_l,tf_r_l])
         data_rd = ft.Row(controls=[tb_r_d,tf_r_d])
         data_rR = ft.Row(controls=[tb_r_R,tf_r_R])
-        data_rro = ft.Row(controls=[tb_r_ro,tf_r_ro])
+        data_rro = ft.Row(controls=[tb_r_ro,tf_r_ro_sel, tf_r_ro])
 
        ###########################################################################################
                 # tabs
