@@ -341,7 +341,7 @@ def main(page: ft.Page):
                     tf_r_ro.value = str(0.023)
                 elif tf_r_ro_sel.value == "Ezüst":
                     tf_r_ro.value = str(0.016)
-
+                page.update()
 
       ###########################################################################################
 
