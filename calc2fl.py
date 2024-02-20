@@ -281,17 +281,17 @@ def main(page: ft.Page):
        ###########################################################################################
                 # tab1-XL  buttons, textfields
         tb_xl_f = ft.TextButton(
-                content= ft.Text(value="Frekvencia, f (Hz)",size=20),
+                content= ft.Text(value="Frekvencia, f (Hz)",size=20, width=200),
                 style= buttstyle1,
                 on_click=xl_f_click
         )
         tb_xl_L = ft.TextButton(
-                content= ft.Text(value="Induktivitás, L (mH)",size=20),
+                content= ft.Text(value="Induktivitás, L (mH)",size=20, width=200),
                 style= buttstyle1, 
                 on_click=xl_L_click
         )
         tb_xl_XL = ft.TextButton(
-                content= ft.Text(value="XL = 2*pi*f*L (ohm)",size=20),
+                content= ft.Text(value="   XL    (ohm)",size=20, width=200),
                 style= buttstyle1,
                 on_click=xl_XL_click
         )
@@ -306,17 +306,17 @@ def main(page: ft.Page):
        ###########################################################################################
               # tab2-XC  buttons, textfields
         tb_xc_f = ft.TextButton(
-                content= ft.Text(value="Frekvencia, f (Hz)",size=20), 
+                content= ft.Text(value="Frekvencia, f (Hz)",size=20), width=200, 
                 style= buttstyle1,
                 on_click=xc_f_click
         )
         tb_xc_C = ft.TextButton(
-                content= ft.Text(value="Kapacitás, C (nF)",size=20), 
+                content= ft.Text(value="Kapacitás, C (nF)",size=20, width=200), 
                 style= buttstyle1, 
                 on_click=xc_C_click
         )
         tb_xc_XC = ft.TextButton(
-                content= ft.Text(value="XC = 1/(2*pi*f*C)  (ohm)",size=20), 
+                content= ft.Text(value="   XC   (ohm)",size=20, width=200), 
                 style= buttstyle1, 
                 on_click=xc_XC_click
         )
@@ -331,17 +331,17 @@ def main(page: ft.Page):
        ###########################################################################################
                 # tab3-fo  buttons, textfields
         tb_fo_f = ft.TextButton(
-                content= ft.Text(value="Rezonancia frekvencia, fo (Hz)",size=20), 
+                content= ft.Text(value="Rezonancia frekvencia, fo (Hz)",size=20, width=200), 
                 style= buttstyle1,  
                 on_click=fo_f_click
         )
         tb_fo_L = ft.TextButton(
-                content= ft.Text(value="Induktivitás, L (mH)",size=20),
+                content= ft.Text(value="Induktivitás, L (mH)",size=20, width=200),
                 style= buttstyle1,  
                 on_click=fo_L_click
         )
         tb_fo_C = ft.TextButton(
-                content= ft.Text(value="Kapacitás, C (nF)",size=20), 
+                content= ft.Text(value="Kapacitás, C (nF)",size=20, width=200), 
                 style= buttstyle1, 
                 on_click=fo_C_click
         )
@@ -356,34 +356,34 @@ def main(page: ft.Page):
        ###########################################################################################
                 # tab4-RLC  buttons, textfields
         tb_rlc_f = ft.TextButton(
-                content= ft.Text(value="Frekvencia, f (Hz)",size=20), 
+                content= ft.Text(value="Frekvencia, f (Hz)",size=20, width=200), 
                 style= buttstyle1,  
                # on_click=rlc_f_click
         )
         tb_rlc_L = ft.TextButton(
-                content= ft.Text(value="Induktivitás, L (mH)",size=20),
+                content= ft.Text(value="Induktivitás, L (mH)",size=20, width=200),
                 style= buttstyle1,  
               #  on_click=rlc_L_click
         )
         tb_rlc_C = ft.TextButton(
-                content= ft.Text(value="Kapacitás, C (nF)",size=20), 
+                content= ft.Text(value="Kapacitás, C (nF)",size=20, width=200), 
                 style= buttstyle1, 
              #  on_click=rlc_C_click
         )
         tb_rlc_R = ft.TextButton(
-                content= ft.Text(value="Ellenállás, R (ohm)",size=20), 
+                content= ft.Text(value="Ellenállás, R (ohm)",size=20, width=200), 
                 style= buttstyle1, 
              #  on_click=rlc_R_click
         )
         tb_rlc_Ze = ft.TextButton(
-                content= ft.Text(value="Impedancia, Ze (ohm)",size=20), 
+                content= ft.Text(value="Impedancia, Ze (ohm)",size=20, width=200), 
                 style= buttstyle1, 
                 on_click=rlc_Ze_click
         )
         tb_rlc_fi = ft.TextButton(
-                content= ft.Text(value="Fázisszög, fi (fok)",size=20), 
+                content= ft.Text(value="Fázisszög, fi (fok)",size=20, width=200), 
                 style= buttstyle1, 
-             #  on_click=rlc_fi_click
+                on_click=rlc_Ze_click
         )
 
         tf_rlc_f = ft.TextField(value=" ", width = 200)
