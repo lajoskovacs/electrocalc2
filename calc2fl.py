@@ -6,6 +6,8 @@ from math import sqrt
 from math import atan			 
 
 def main(page: ft.Page):
+
+        page.title = "calc2"
 		
         def xl_f_click(e):			# xl-tab 'f' változását lekezelő függvény	
                 ok = True
