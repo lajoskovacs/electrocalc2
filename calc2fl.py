@@ -376,8 +376,61 @@ def main(page: ft.Page):
                     tf_r_ro.value = str(0.016)
                 page.update()
 
+
       ###########################################################################################
 
+        def rc_Atv_click(e):			#  rc-tab 'Atv' változását lekezelő függvény
+                ok = True  
+                try:
+                        f = float(tf_rc_f.value)   # 'f' beolvasása szövegmezőből
+                        if f < 0:
+                                ok = False
+                                tf_rc_f.value = tf_rc_f.value + ' ?'   # nem jó érték !               
+                except:
+                        ok = False
+                        tf_rc_f.value = tf_rc_f.value + ' ?'   # nem jó érték !
+                try:
+                        C = float(tf_rc_C.value)   # 'C' beolvasása szövegmezőből
+                        if C <= 0:
+                                ok = False
+                                tf_rc_C.value = tf_rc_C.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_rc_C.value = tf_rc_C.value + ' ?'   # nem jó érték !
+                try:
+                        R = float(tf_rc_R.value)   # 'R' beolvasása szövegmezőből
+                        if R <= 0:
+                                ok = False
+                                tf_rc_R.value = tf_rc_R.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_rc_R.value = tf_rc_R.value + ' ?'   # nem jó érték !                       
+                if ok:
+                        if f==0:
+                                Atv = 1
+                                fi = 0
+                        else:
+                                xc = 1000000000/(2*pi*f*C)        #  XC   Ohm-ban !!
+                                Ze = sqrt(R**2+xc**2)
+                                Atv = xc/Ze
+                                fi = 180*atan(R/xc)/pi
+
+                        fh=1000000000/(2*pi*R*C)
+                        tf_rc_Atv.value = str(Atv)   # 'Uki/Ube' kiírása szövegmezőbe
+                        tf_rc_fi.value = str(fi)   # 'fi' kiírása szövegmezőbe
+                        tf_rc_fh.value = str(fh)   # 'fh' kiírása szövegmezőbe
+                else:
+                        tf_rc_Atv.value = "hiba!!"     
+                        tf_rc_fi.value = "hiba!!"     
+                        tf_rc_fh.value = "hiba!!" 
+
+
+                page.update()			#  grafikus felület frissítése
+
+
+
+
+      ###########################################################################################
 
         txt_cim= ft.Text(
                 value=" Elektrotechnikai számítások ", 
@@ -572,18 +625,18 @@ def main(page: ft.Page):
         tb_rc_Atv = ft.TextButton(
                 content= ft.Text(value="Feszültség átvitel, Uki / Ube",size=20, width=200),
                 style= buttstyle1,  
-              #  on_click=rlc_L_click
+                on_click=rc_Atv_click
         )
     
         tb_rc_fi = ft.TextButton(
                 content= ft.Text(value="Fázistolás, ki-be (fok)",size=20, width=200), 
                 style= buttstyle1, 
-                on_click=rlc_Ze_click
+                on_click=rrc_Atv_click
         )
         tb_rc_fh = ft.TextButton(
                 content= ft.Text(value="Határfrekvencia, fh (Hz)",size=20, width=200), 
                 style= buttstyle1, 
-                on_click=rlc_Ze_click
+                on_click=rc_Atv_click
         )
 
         tf_rc_f = ft.TextField(value=" ", width = 200)  
