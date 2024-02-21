@@ -662,6 +662,54 @@ def main(page: ft.Page):
         data_rcfi = ft.Row(controls=[tb_rc_fi,tf_rc_fi])
         data_rcfh = ft.Row(controls=[tb_rc_fh,tf_rc_fh])
 
+ ###########################################################################################
+              # tab7-CR  buttons, textfields
+        tb_cr_f = ft.TextButton(
+                content= ft.Text(value="Frekvencia, f (Hz)",size=20, width=200), 
+                style= buttstyle1,  
+               # on_click=rlc_f_click
+        )
+        tb_cr_C = ft.TextButton(
+                content= ft.Text(value="Kapacitás, C (nF)",size=20, width=200), 
+                style= buttstyle1, 
+             #  on_click=rlc_C_click
+        )
+        tb_cr_R = ft.TextButton(
+                content= ft.Text(value="Ellenállás, R (ohm)",size=20, width=200), 
+                style= buttstyle1, 
+             #  on_click=rlc_R_click
+        )
+        tb_cr_Tr = ft.TextButton(
+                content= ft.Text(value="Feszültség átvitel, Uki / Ube",size=20, width=200),
+                style= buttstyle1,  
+                on_click=cr_Tr_click
+        )
+    
+        tb_cr_fi = ft.TextButton(
+                content= ft.Text(value="Fázistolás, ki-be (fok)",size=20, width=200), 
+                style= buttstyle1, 
+                on_click=cr_Tr_click
+        )
+        tb_cr_fh = ft.TextButton(
+                content= ft.Text(value="Határfrekvencia, fh (Hz)",size=20, width=200), 
+                style= buttstyle1, 
+                on_click=cr_Tr_click
+        )
+
+        tf_cr_f = ft.TextField(value=" ", width = 200)  
+        tf_cr_C = ft.TextField(value=" ", width = 200)
+        tf_cr_R = ft.TextField(value=" ", width = 200)
+        tf_cr_Tr = ft.TextField(value=" ", width = 200)
+        tf_cr_fi = ft.TextField(value=" ", width = 200)
+        tf_cr_fh = ft.TextField(value=" ", width = 200)
+
+        data_crf = ft.Row(controls=[tb_cr_f,tf_cr_f])     
+        data_crC = ft.Row(controls=[tb_cr_C,tf_cr_C])
+        data_crR = ft.Row(controls=[tb_cr_R,tf_cr_R])
+        data_crTr = ft.Row(controls=[tb_cr_Tr,tf_cr_Tr])
+        data_crfi = ft.Row(controls=[tb_cr_fi,tf_cr_fi])
+        data_crfh = ft.Row(controls=[tb_cr_fh,tf_cr_fh])
+
        ###########################################################################################
                 # tabs
         lapok = ft.Tabs(
@@ -719,7 +767,7 @@ def main(page: ft.Page):
                                 text="R",
                                 content=ft.Column(
                                         controls=[
-                                                ft.Text("Vezeték ellenállás számítása",style=textstyle1),
+                                                ft.Text("Vezeték ellenállása",style=textstyle1),
                                                 data_rl, 
                                                 data_rd,
                                                 data_rro, 
@@ -731,7 +779,7 @@ def main(page: ft.Page):
                                 text="RC",
                                 content=ft.Column(
                                         controls=[
-                                                ft.Text("RC szűrő számítása",style=textstyle1),
+                                                ft.Text("RC szűrő, aluláteresztő",style=textstyle1),
                                                 data_rcf,      
                                                 data_rcC,
                                                 data_rcR,
@@ -741,7 +789,20 @@ def main(page: ft.Page):
                                         ]
                                 )
                         ),
-
+                        ft.Tab(
+                                text="CR",
+                                content=ft.Column(
+                                        controls=[
+                                                ft.Text("CR szűrő, felüláteresztő",style=textstyle1),
+                                                data_crf,      
+                                                data_crC,
+                                                data_crR,
+                                                data_crTr,
+                                                data_crfi,
+                                                data_crfh,
+                                        ]
+                                )
+                        ),
                 ],
                 expand=1,
         )
