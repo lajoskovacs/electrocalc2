@@ -555,6 +555,13 @@ def main(page: ft.Page):
   ###########################################################################################
               # tab6-RC  buttons, textfields
    
+        tf_rc_f = ft.TextField(value=" ", width = 200)  
+        tf_rc_C = ft.TextField(value=" ", width = 200)
+        tf_rc_R = ft.TextField(value=" ", width = 200)
+        tf_rc_Atv = ft.TextField(value=" ", width = 200)
+        tf_rc_fi = ft.TextField(value=" ", width = 200)
+        tf_rc_fh = ft.TextField(value=" ", width = 200)
+
         data_rcf = ft.Row(controls=[])     
         data_rcC = ft.Row(controls=[])
         data_rcR = ft.Row(controls=[])
