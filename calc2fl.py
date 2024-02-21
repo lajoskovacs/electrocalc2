@@ -552,6 +552,16 @@ def main(page: ft.Page):
         data_rR = ft.Row(controls=[tb_r_R,tf_r_R])
         data_rro = ft.Row(controls=[tb_r_ro,tf_r_ro_sel, tf_r_ro])
 
+  ###########################################################################################
+              # tab6-RC  buttons, textfields
+   
+        data_rcf = ft.Row(controls=[])     
+        data_rcC = ft.Row(controls=[])
+        data_rcR = ft.Row(controls=[])
+        data_rcAtv = ft.Row(controls=[])
+        data_rcfi = ft.Row(controls=[])
+        data_rcfh = ft.Row(controls=[])
+
        ###########################################################################################
                 # tabs
         lapok = ft.Tabs(
@@ -617,7 +627,21 @@ def main(page: ft.Page):
                                         ]
                                 )
                         ),
-   
+                        ft.Tab(
+                                text="RC",
+                                content=ft.Column(
+                                        controls=[
+                                                ft.Text("RC szűrő számítása",style=textstyle1),
+                                                data_rcf,      
+                                                data_rcC,
+                                                data_rcR,
+                                                data_rcAtv,
+                                                data_rcfi,
+                                                data_rcfh,
+                                        ]
+                                )
+                        ),
+
                 ],
                 expand=1,
         )
