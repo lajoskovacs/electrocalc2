@@ -432,14 +432,23 @@ def main(page: ft.Page):
 
       ###########################################################################################
 
-        txt_cim= ft.Text(
+        txt_cim = ft.Text(
                 value=" Elektrotechnikai számítások ", 
                 color=ft.colors.WHITE, 
                 bgcolor=ft.colors.ORANGE_800, 
                 size=30,
                 theme_style=ft.TextThemeStyle.TITLE_LARGE, 
-                width = 800
+                width = 600
         )	  #  egy cimke
+
+        txt_space = ft.Text(
+                value=" ", 
+                color=ft.colors.WHITE, 
+                bgcolor=ft.colors.WHITE, 
+                size=60,
+                theme_style=ft.TextThemeStyle.TITLE_LARGE, 
+                width = 800
+        )
 
         buttstyle1 = ft.ButtonStyle(bgcolor=ft.colors.YELLOW)   # button style
         textstyle1 = ft.TextStyle(size=30,color="pink600",weight=ft.FontWeight.W_900)
@@ -741,7 +750,8 @@ def main(page: ft.Page):
 
         page.add(
                 txt_cim,
-                lapok
+                lapok,
+                txt_space
         )
 
 
