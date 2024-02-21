@@ -554,7 +554,38 @@ def main(page: ft.Page):
 
   ###########################################################################################
               # tab6-RC  buttons, textfields
-   
+        tb_rc_f = ft.TextButton(
+                content= ft.Text(value="Frekvencia, f (Hz)",size=20, width=200), 
+                style= buttstyle1,  
+               # on_click=rlc_f_click
+        )
+        tb_rc_C = ft.TextButton(
+                content= ft.Text(value="Kapacitás, C (nF)",size=20, width=200), 
+                style= buttstyle1, 
+             #  on_click=rlc_C_click
+        )
+        tb_rc_R = ft.TextButton(
+                content= ft.Text(value="Ellenállás, R (ohm)",size=20, width=200), 
+                style= buttstyle1, 
+             #  on_click=rlc_R_click
+        )
+        tb_rc_Atv = ft.TextButton(
+                content= ft.Text(value="Feszültség átvitel, Uki / Ube",size=20, width=200),
+                style= buttstyle1,  
+              #  on_click=rlc_L_click
+        )
+    
+        tb_rc_fi = ft.TextButton(
+                content= ft.Text(value="Fázistolás, ki-be (fok)",size=20, width=200), 
+                style= buttstyle1, 
+                on_click=rlc_Ze_click
+        )
+        tb_rc_fh = ft.TextButton(
+                content= ft.Text(value="Határfrekvencia, fh (Hz)",size=20, width=200), 
+                style= buttstyle1, 
+                on_click=rlc_Ze_click
+        )
+
         tf_rc_f = ft.TextField(value=" ", width = 200)  
         tf_rc_C = ft.TextField(value=" ", width = 200)
         tf_rc_R = ft.TextField(value=" ", width = 200)
@@ -562,12 +593,12 @@ def main(page: ft.Page):
         tf_rc_fi = ft.TextField(value=" ", width = 200)
         tf_rc_fh = ft.TextField(value=" ", width = 200)
 
-        data_rcf = ft.Row(controls=[])     
-        data_rcC = ft.Row(controls=[])
-        data_rcR = ft.Row(controls=[])
-        data_rcAtv = ft.Row(controls=[])
-        data_rcfi = ft.Row(controls=[])
-        data_rcfh = ft.Row(controls=[])
+        data_rcf = ft.Row(controls=[tb_rc_f,tf_rc_f])     
+        data_rcC = ft.Row(controls=[tb_rc_C,tf_rc_C])
+        data_rcR = ft.Row(controls=[tb_rc_R,tf_rc_R])
+        data_rcAtv = ft.Row(controls=[tb_rc_Atv,tf_rc_Atv])
+        data_rcfi = ft.Row(controls=[tb_rc_fi,tf_rc_fi])
+        data_rcfh = ft.Row(controls=[tb_rc_fh,tf_rc_fh])
 
        ###########################################################################################
                 # tabs
