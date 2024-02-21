@@ -413,7 +413,7 @@ def main(page: ft.Page):
                                 xc = 1000000000/(2*pi*f*C)        #  XC   Ohm-ban !!
                                 Ze = sqrt(R**2+xc**2)
                                 Tr = xc/Ze
-                                fi = 180*atan(R/xc)/pi
+                                fi = -180*atan(R/xc)/pi
 
                         fh=1000000000/(2*pi*R*C)
                         tf_rc_Tr.value = str(Tr)   # 'Uki/Ube' kiírása szövegmezőbe
@@ -427,7 +427,55 @@ def main(page: ft.Page):
 
                 page.update()			#  grafikus felület frissítése
 
+ ###########################################################################################
 
+        def cr_Tr_click(e):			#  cr-tab 'Tr' változását lekezelő függvény
+                ok = True  
+                try:
+                        f = float(tf_cr_f.value)   # 'f' beolvasása szövegmezőből
+                        if f < 0:
+                                ok = False
+                                tf_cr_f.value = tf_cr_f.value + ' ?'   # nem jó érték !               
+                except:
+                        ok = False
+                        tf_cr_f.value = tf_cr_f.value + ' ?'   # nem jó érték !
+                try:
+                        C = float(tf_cr_C.value)   # 'C' beolvasása szövegmezőből
+                        if C <= 0:
+                                ok = False
+                                tf_cr_C.value = tf_cr_C.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_cr_C.value = tf_cr_C.value + ' ?'   # nem jó érték !
+                try:
+                        R = float(tf_cr_R.value)   # 'R' beolvasása szövegmezőből
+                        if R <= 0:
+                                ok = False
+                                tf_cr_R.value = tf_cr_R.value + ' ?'   # nem jó érték !
+                except:
+                        ok = False
+                        tf_cr_R.value = tf_cr_R.value + ' ?'   # nem jó érték !                       
+                if ok:
+                        if f==0:
+                                Tr = 1
+                                fi = 0
+                        else:
+                                xc = 1000000000/(2*pi*f*C)        #  XC   Ohm-ban !!
+                                Ze = sqrt(R**2+xc**2)
+                                Tr = R/Ze
+                                fi = 180*atan(xc/R)/pi
+
+                        fh=1000000000/(2*pi*R*C)
+                        tf_cr_Tr.value = str(Tr)   # 'Uki/Ube' kiírása szövegmezőbe
+                        tf_cr_fi.value = str(fi)   # 'fi' kiírása szövegmezőbe
+                        tf_cr_fh.value = str(fh)   # 'fh' kiírása szövegmezőbe
+                else:
+                        tf_cr_Tr.value = "hiba!!"     
+                        tf_cr_fi.value = "hiba!!"     
+                        tf_cr_fh.value = "hiba!!" 
+
+
+                page.update()			#  grafikus felület frissítése
 
 
       ###########################################################################################
