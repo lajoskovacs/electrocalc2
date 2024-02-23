@@ -8,8 +8,8 @@ from math import atan
 def main(page: ft.Page):
 
         page.title = "calc2"
-        page.window_width = 540
-        page.window_height = 800       
+        page.window_width = 500
+        page.window_height = 900       
 		
         def xl_f_click(e):			# xl-tab 'f' változását lekezelő függvény	
                 ok = True
