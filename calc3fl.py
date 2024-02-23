@@ -649,7 +649,7 @@ def main(page: ft.Page):
         tf_r_d = ft.TextField(value=" ", width = TEXTW)
         tf_r_R = ft.TextField(value=" ", width = TEXTW)
         tf_r_ro_sel = ft.Dropdown(
-        	width=100,
+        	width=110,
         	options=[
             		ft.dropdown.Option("Réz"),
             		ft.dropdown.Option("Alumínium"),
@@ -658,7 +658,7 @@ def main(page: ft.Page):
                         ], 
                 on_change = r_ro_sel_change
 	)
-        tf_r_ro = ft.TextField(value=" ", width = 80)
+        tf_r_ro = ft.TextField(value=" ", width = 70)
 
         data_rl = ft.Row(controls=[tb_r_l,tf_r_l])
         data_rd = ft.Row(controls=[tb_r_d,tf_r_d])
