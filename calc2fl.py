@@ -858,7 +858,7 @@ def main(page: ft.Page):
        ###########################################################################################
 
         page.window_width = 540
-        page.window_height = 1200
+        page.window_height = 1000
         page.add(
                 txt_cim,
                 lapok,
