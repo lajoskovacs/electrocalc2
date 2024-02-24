@@ -865,6 +865,11 @@ def main(page: ft.Page):
 
         page.add(
                 ft.Container(
+                        width=420,
+                        height=680,
+                        border_radius=30,
+                        padding=10,
+                        bgcolor='#aaaaaa',
                         content=ft.Column(
                                 controls=[
                                          #  txt_cim,
