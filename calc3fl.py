@@ -524,9 +524,9 @@ def main(page: ft.Page):
                 style= buttstyle1,
                 on_click=xl_XL_click
         )
-        tf_xl_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_xl_L = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_xl_XL = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
+        tf_xl_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_xl_L = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_xl_XL = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
 
         data_xlf = ft.Row(controls=[tb_xl_f,tf_xl_f])
         data_xlL = ft.Row(controls=[tb_xl_L,tf_xl_L])
@@ -549,9 +549,9 @@ def main(page: ft.Page):
                 style= buttstyle1, 
                 on_click=xc_XC_click
         )
-        tf_xc_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_xc_C = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_xc_XC = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
+        tf_xc_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_xc_C = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_xc_XC = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
 
         data_xcf = ft.Row(controls=[tb_xc_f,tf_xc_f])
         data_xcC = ft.Row(controls=[tb_xc_C,tf_xc_C])
@@ -574,9 +574,9 @@ def main(page: ft.Page):
                 style= buttstyle1, 
                 on_click=fo_C_click
         )
-        tf_fo_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_fo_L = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_fo_C = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
+        tf_fo_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_fo_L = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_fo_C = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
 
         data_fof = ft.Row(controls=[tb_fo_f,tf_fo_f])
         data_foL = ft.Row(controls=[tb_fo_L,tf_fo_L])
@@ -615,12 +615,12 @@ def main(page: ft.Page):
                 on_click=rlc_Ze_click
         )
 
-        tf_rlc_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_rlc_L = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_rlc_C = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_rlc_R = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_rlc_Ze = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_rlc_fi = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
+        tf_rlc_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_rlc_L = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_rlc_C = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_rlc_R = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_rlc_Ze = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_rlc_fi = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
 
         data_rlcf = ft.Row(controls=[tb_rlc_f,tf_rlc_f])
         data_rlcL = ft.Row(controls=[tb_rlc_L,tf_rlc_L])
@@ -648,9 +648,9 @@ def main(page: ft.Page):
                 content= ft.Text(value="Anyag, ró       (ohm*mm2/m)",size=BUTTS, width=BUTTW), 
                 style= buttstyle1, 
         )
-        tf_r_l = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_r_d = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_r_R = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
+        tf_r_l = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_r_d = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_r_R = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
         tf_r_ro_sel = ft.Dropdown(
         	width=110,
         	options=[
@@ -661,7 +661,7 @@ def main(page: ft.Page):
                         ], 
                 on_change = r_ro_sel_change
 	)
-        tf_r_ro = ft.TextField(value=" ", width = 80, height = TEXTH)
+        tf_r_ro = ft.TextField(value=" ", width = 80, height = TEXTH, color='red')
 
         data_rl = ft.Row(controls=[tb_r_l,tf_r_l])
         data_rd = ft.Row(controls=[tb_r_d,tf_r_d])
@@ -702,12 +702,12 @@ def main(page: ft.Page):
                 on_click=rc_Tr_click
         )
 
-        tf_rc_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH)  
-        tf_rc_C = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_rc_R = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_rc_Tr = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_rc_fi = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_rc_fh = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
+        tf_rc_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')  
+        tf_rc_C = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')  
+        tf_rc_R = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red') 
+        tf_rc_Tr = ft.TextField(value=" ", width = TEXTW, height = TEXTH ,color='red')
+        tf_rc_fi = ft.TextField(value=" ", width = TEXTW, height = TEXTH ,color='red')
+        tf_rc_fh = ft.TextField(value=" ", width = TEXTW, height = TEXTH ,color='red')
 
         data_rcf = ft.Row(controls=[tb_rc_f,tf_rc_f])     
         data_rcC = ft.Row(controls=[tb_rc_C,tf_rc_C])
@@ -750,12 +750,12 @@ def main(page: ft.Page):
                 on_click=cr_Tr_click
         )
 
-        tf_cr_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH)  
-        tf_cr_C = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_cr_R = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_cr_Tr = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_cr_fi = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
-        tf_cr_fh = ft.TextField(value=" ", width = TEXTW, height = TEXTH)
+        tf_cr_f = ft.TextField(value=" ", width = TEXTW, height = TEXTH ,color='red')  
+        tf_cr_C = ft.TextField(value=" ", width = TEXTW, height = TEXTH ,color='red')
+        tf_cr_R = ft.TextField(value=" ", width = TEXTW, height = TEXTH, color='red')
+        tf_cr_Tr = ft.TextField(value=" ", width = TEXTW, height = TEXTH,color='red')
+        tf_cr_fi = ft.TextField(value=" ", width = TEXTW, height = TEXTH,color='red')
+        tf_cr_fh = ft.TextField(value=" ", width = TEXTW, height = TEXTH,color='red')
 
         data_crf = ft.Row(controls=[tb_cr_f,tf_cr_f])     
         data_crC = ft.Row(controls=[tb_cr_C,tf_cr_C])
@@ -894,7 +894,7 @@ def main(page: ft.Page):
                         content=ft.Column(
                                 controls=[
                                         ft.Container(
-                                                padding=5,
+                                                padding=10,
                                                 content=txt_cim,
                                         ),
                                         ft.Container(
