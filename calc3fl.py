@@ -9,7 +9,34 @@ def main(page: ft.Page):
 
         page.title = "calc2"
         page.window_width = 500
-        page.window_height = 900       
+        page.window_height = 900     
+
+        BUTTW = 150 # button width
+        TEXTW = 150  # text width
+        TEXTH = 60  # text height
+        BUTTS = 16  # button font size
+        txt_cim = ft.Text(
+                value=" Elektrotechnika", 
+                color=ft.colors.WHITE, 
+                bgcolor=ft.colors.ORANGE_800, 
+                size=18,
+                theme_style=ft.TextThemeStyle.TITLE_LARGE, 
+                width = 400
+        )	  #  egy cimke
+
+        txt_space = ft.Text(
+                value=" ", 
+                color=ft.colors.WHITE, 
+                bgcolor=ft.colors.WHITE, 
+                size=30,
+                theme_style=ft.TextThemeStyle.TITLE_LARGE, 
+                width = 400
+        )
+
+        buttstyle1 = ft.ButtonStyle(bgcolor=ft.colors.YELLOW)   # button style
+        textstyle1 = ft.TextStyle(size=20,color="pink600",weight=ft.FontWeight.W_900)
+
+       ###########################################################################################
 		
         def xl_f_click(e):			# xl-tab 'f' változását lekezelő függvény	
                 ok = True
@@ -481,33 +508,6 @@ def main(page: ft.Page):
 
 
       ###########################################################################################
-
-        BUTTW = 150 # button width
-        TEXTW = 150  # text width
-        TEXTH = 60  # text height
-        BUTTS = 16  # button font size
-        txt_cim = ft.Text(
-                value=" Elektrotechnika", 
-                color=ft.colors.WHITE, 
-                bgcolor=ft.colors.ORANGE_800, 
-                size=18,
-                theme_style=ft.TextThemeStyle.TITLE_LARGE, 
-                width = 400
-        )	  #  egy cimke
-
-        txt_space = ft.Text(
-                value=" ", 
-                color=ft.colors.WHITE, 
-                bgcolor=ft.colors.WHITE, 
-                size=30,
-                theme_style=ft.TextThemeStyle.TITLE_LARGE, 
-                width = 400
-        )
-
-        buttstyle1 = ft.ButtonStyle(bgcolor=ft.colors.YELLOW)   # button style
-        textstyle1 = ft.TextStyle(size=25,color="pink600",weight=ft.FontWeight.W_900)
-
-       ###########################################################################################
                 # tab1-XL  buttons, textfields
         tb_xl_f = ft.TextButton(
                 content= ft.Text(value="Frekvencia,f (Hz)",size=BUTTS, width=BUTTW),
@@ -772,93 +772,114 @@ def main(page: ft.Page):
                 tabs=[
                         ft.Tab(
                                 text="XL",
-                                content=ft.Column(
-                                        controls=[
-                                                ft.Text("Induktív reaktancia",style=textstyle1), 
-                                                data_xlf, 
-                                                data_xlL, 
-                                                data_xlXL
-                                        ]
+                                content=ft.Container(
+                                        padding=10,
+                                        content=ft.Column( 
+                                                controls=[
+                                                        ft.Text("Induktív reaktancia",style=textstyle1), 
+                                                        data_xlf, 
+                                                        data_xlL, 
+                                                        data_xlXL
+                                                ]
+                                        )
                                 ),
                         ),
                         ft.Tab(
                                 text="XC",
-                                content=ft.Column(
-                                        controls=[
-                                                ft.Text("Kapacitív reaktancia",style=textstyle1), 
-                                                data_xcf, 
-                                                data_xcC, 
-                                                data_xcXC
-                                        ]
+                                content=ft.Container(
+                                        padding=10,
+                                        content=ft.Column(
+                                                controls=[
+                                                        ft.Text("Kapacitív reaktancia",style=textstyle1), 
+                                                        data_xcf, 
+                                                        data_xcC, 
+                                                        data_xcXC
+                                                ]
+                                        )
                                 ),
                         ),
                         ft.Tab(
                                 text="fo",
-                                content=ft.Column(
-                                        controls=[
-                                                ft.Text("Rezonancia fekvencia",style=textstyle1),
-                                                data_foC, 
-                                                data_foL, 
-                                                data_fof
-                                        ]
+                                content=ft.Container(
+                                        padding=10,
+                                        content=ft.Column(
+                                                controls=[
+                                                        ft.Text("Rezonancia fekvencia",style=textstyle1),
+                                                        data_foC, 
+                                                        data_foL, 
+                                                        data_fof
+                                                ]
+                                        )
                                 )
                         ),
                         ft.Tab(
                                 text="RLC",
-                                content=ft.Column(
-                                        controls=[
-                                                ft.Text("soros RLC",style=textstyle1),
-                                                data_rlcf,      
-                                                data_rlcL,
-                                                data_rlcC,
-                                                data_rlcR,
-                                                data_rlcZe,
-                                                data_rlcfi,
-                                        ]
+                                content=ft.Container(
+                                        padding=10,
+                                        content=ft.Column(
+                                                controls=[
+                                                        ft.Text("soros RLC",style=textstyle1),
+                                                        data_rlcf,      
+                                                        data_rlcL,
+                                                        data_rlcC,
+                                                        data_rlcR,
+                                                        data_rlcZe,
+                                                        data_rlcfi,
+                                                ]
+                                        )
                                 )
                         ),
                         ft.Tab(
                                 text="R",
-                                content=ft.Column(
-                                        controls=[
-                                                ft.Text("Vezeték ellenállása",style=textstyle1),
-                                                data_rl, 
-                                                data_rd,
-                                                data_rro, 
-                                                data_rR
-                                        ]
+                                content=ft.Container(
+                                        padding=10,
+                                        content=ft.Column(
+                                                controls=[
+                                                        ft.Text("Vezeték ellenállása",style=textstyle1),
+                                                        data_rl, 
+                                                        data_rd,
+                                                        data_rro, 
+                                                        data_rR
+                                                ]
+                                        )
                                 )
                         ),
                         ft.Tab(
                                 text="RC",
-                                content=ft.Column(
-                                        controls=[
-                                                ft.Text("RC szűrő, alulát.",style=textstyle1),
-                                                data_rcf,      
-                                                data_rcC,
-                                                data_rcR,
-                                                data_rcTr,
-                                                data_rcfi,
-                                                data_rcfh,
-                                        ]
+                                content=ft.Container(
+                                        padding=10,
+                                        content=ft.Column(
+                                                controls=[
+                                                        ft.Text("RC szűrő, alulát.",style=textstyle1),
+                                                        data_rcf,      
+                                                        data_rcC,
+                                                        data_rcR,
+                                                        data_rcTr,
+                                                        data_rcfi,
+                                                        data_rcfh,
+                                                ]
+                                        )
                                 )
                         ),
                         ft.Tab(
                                 text="CR",
-                                content=ft.Column(
-                                        controls=[
-                                                ft.Text("CR szűrő, felülát.",style=textstyle1),
-                                                data_crf,      
-                                                data_crC,
-                                                data_crR,
-                                                data_crTr,
-                                                data_crfi,
-                                                data_crfh,
-                                        ]
+                                content=ft.Container(
+                                        padding=10,
+                                        content=ft.Column(
+                                                controls=[
+                                                        ft.Text("CR szűrő, felülát.",style=textstyle1),
+                                                        data_crf,      
+                                                        data_crC,
+                                                        data_crR,
+                                                        data_crTr,
+                                                        data_crfi,
+                                                        data_crfh,
+                                                ]
+                                        )
                                 )
                         ),
                 ],
-                expand=1,
+                #expand=1,
         )
 
        ###########################################################################################
@@ -866,16 +887,23 @@ def main(page: ft.Page):
         page.add(
                 ft.Container(
                         width=420,
-                        height=680,
+                        height=800,
                         border_radius=30,
                         padding=10,
-                        bgcolor='#aaaaaa',
+                        bgcolor='#cccccc',
                         content=ft.Column(
                                 controls=[
-                                         #  txt_cim,
-                                        lapok,
+                                        ft.Container(
+                                                padding=5,
+                                                content=txt_cim,
+                                        ),
+                                        ft.Container(
+                                                padding=5,
+                                                content=lapok,
+                                        ),
                                         txt_space
                                 ]
+                                
                         )
                 )
         )
