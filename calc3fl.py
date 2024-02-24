@@ -864,9 +864,15 @@ def main(page: ft.Page):
        ###########################################################################################
 
         page.add(
-              #  txt_cim,
-                lapok,
-                txt_space
+                ft.Container(
+                        content=ft.Column(
+                                controls=[
+                                         #  txt_cim,
+                                        lapok,
+                                        txt_space
+                                ]
+                        )
+                )
         )
 
 
