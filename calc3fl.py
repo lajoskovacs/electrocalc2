@@ -890,7 +890,7 @@ def main(page: ft.Page):
                         height=800,
                         border_radius=30,
                         padding=10,
-                        bgcolor='#eee6aa',
+                        bgcolor='#f9f4b5',
                         content=ft.Column(
                                 controls=[
                                         ft.Container(
