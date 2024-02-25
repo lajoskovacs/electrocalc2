@@ -8,8 +8,8 @@ from math import atan
 def main(page: ft.Page):
 
         page.title = "calc2"
-        page.window_width = 500
-        page.window_height = 900     
+        page.window_width = 440
+        page.window_height = 820  
 
         BUTTW = 150 # button width
         TEXTW = 150  # text width
@@ -890,7 +890,7 @@ def main(page: ft.Page):
                         height=800,
                         border_radius=30,
                         padding=10,
-                        bgcolor='#cccccc',
+                        bgcolor='#eee6aa',
                         content=ft.Column(
                                 controls=[
                                         ft.Container(
