@@ -773,7 +773,7 @@ def main(page: ft.Page):
                         ft.Tab(
                                 text="XL",
                                 content=ft.Container(
-                                        padding=10,
+                                        padding=5,
                                         content=ft.Column( 
                                                 controls=[
                                                         ft.Text("Induktív reaktancia",style=textstyle1), 
@@ -787,7 +787,7 @@ def main(page: ft.Page):
                         ft.Tab(
                                 text="XC",
                                 content=ft.Container(
-                                        padding=10,
+                                        padding=5,
                                         content=ft.Column(
                                                 controls=[
                                                         ft.Text("Kapacitív reaktancia",style=textstyle1), 
@@ -801,7 +801,7 @@ def main(page: ft.Page):
                         ft.Tab(
                                 text="fo",
                                 content=ft.Container(
-                                        padding=10,
+                                        padding=5,
                                         content=ft.Column(
                                                 controls=[
                                                         ft.Text("Rezonancia fekvencia",style=textstyle1),
@@ -815,7 +815,7 @@ def main(page: ft.Page):
                         ft.Tab(
                                 text="RLC",
                                 content=ft.Container(
-                                        padding=10,
+                                        padding=5,
                                         content=ft.Column(
                                                 controls=[
                                                         ft.Text("soros RLC",style=textstyle1),
@@ -832,7 +832,7 @@ def main(page: ft.Page):
                         ft.Tab(
                                 text="R",
                                 content=ft.Container(
-                                        padding=10,
+                                        padding=5,
                                         content=ft.Column(
                                                 controls=[
                                                         ft.Text("Vezeték ellenállása",style=textstyle1),
@@ -847,7 +847,7 @@ def main(page: ft.Page):
                         ft.Tab(
                                 text="RC",
                                 content=ft.Container(
-                                        padding=10,
+                                        padding=5,
                                         content=ft.Column(
                                                 controls=[
                                                         ft.Text("RC szűrő, alulát.",style=textstyle1),
@@ -864,7 +864,7 @@ def main(page: ft.Page):
                         ft.Tab(
                                 text="CR",
                                 content=ft.Container(
-                                        padding=10,
+                                        padding=5,
                                         content=ft.Column(
                                                 controls=[
                                                         ft.Text("CR szűrő, felülát.",style=textstyle1),
